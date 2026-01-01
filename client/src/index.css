@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-game-dark text-game-text font-sans antialiased;
+  }
+}
+
+.neon-text {
+  text-shadow: 0 0 5px #00ffeb, 0 0 10px #00ffeb;
+}
+
+.neon-border {
+  box-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff;
+}
