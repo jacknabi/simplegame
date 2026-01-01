@@ -21,7 +21,7 @@ export const AuthProvider = ({ children }) => {
                 try {
                     // If we had a verify route, we'd use it. For now, we trust the token or add a /me route.
                     // Let's assume the backend has /api/user to get current user info.
-                    const res = await axios.get('http://localhost:5001/api/user');
+                    const res = await axios.get('https://simplegame22.onrender.com/api/user');
                     setUser(res.data);
                 } catch (err) {
                     console.error(err);
@@ -34,7 +34,7 @@ export const AuthProvider = ({ children }) => {
     }, [token]);
 
     const login = async (username, password) => {
-        const res = await axios.post('http://localhost:5001/api/login', { username, password });
+        const res = await axios.post('https://simplegame22.onrender.com/api/login', { username, password });
         localStorage.setItem('token', res.data.token);
         setToken(res.data.token);
         setUser({ username: res.data.username, highScore: res.data.highScore });
@@ -42,7 +42,7 @@ export const AuthProvider = ({ children }) => {
     };
 
     const register = async (username, password) => {
-        await axios.post('http://localhost:5001/api/register', { username, password });
+        await axios.post('https://simplegame22.onrender.com/api/register', { username, password });
     };
 
     const logout = () => {

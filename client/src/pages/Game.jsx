@@ -61,7 +61,7 @@ const Game = () => {
             const currentScore = scoreRef.current; // capture current score from ref
             // Only save if it's a high score? Backend handles that logic usually, but let's just send it.
             // Backend logic: "if (score > user.highScore)"
-            const res = await axios.post('http://localhost:5001/api/score', { score: currentScore });
+            const res = await axios.post('https://simplegame22.onrender.com/api/score', { score: currentScore });
 
             if (res.data.highScore > user.highScore) {
                 updateScore(res.data.highScore); // Update local context
